@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'solaimanlipi';
+    src: url('font/SolaimanLipi_22-02-2012.ttf') format('ttf');
+         /* url('path/to/font.woff') format('woff'); */
+    /* Add additional font formats as needed */
+  }
+.footer-area {
+    background-color: #2a2525;
+    padding: 30px 70px;
+    color: #fff;
+    text-align: justify;
+    font-family: solaimanlipi;
+}
+.footer-area em{
+    font-size: 13px;
+}
+.footer-area h1 {
+    color: #b41503;
+    text-decoration: underline;
+    font-size: 25px;
+    /* width: 300px; */
+    /* border-bottom: 1px solid; */
+}
+.footer-logo img {
+    width: 100px;
+    margin-top: -30px;
+    padding-right: 20px;
+}
+.social-icon a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-align: center;
+    align-items: baseline;
+    font-size: 20px;
+}
+.social-icon a i {
+    font-size: 18px;
+    padding: 10px 10px;
+    background-color: #3c0aef;
+    color: #fafafb;
+}
+.social-icon #facebook {
+    background-color: #3c0aef;
+    color: #fafafb;
+    text-transform: none;
+}
+.social-icon #twitter {
+    background-color: #6b3761;
+    color: #fafafb;
+    text-transform: none;
+}
+.social-icon #instagram {
+    background-color: #09ec54;
+    color: #fafafb;
+    text-transform: none;
+}
+.social-icon #youtube {
+    background-color: #f44d1a;
+    color: #fafafb;
+    text-transform: none;
+}
+.footer-head-office p {
+    margin-bottom: 3px;
+}
+.footer-head-office h1 {
+    margin-bottom: 12px;
+}
+.footer-corporate-office p {
+    margin-bottom: 3px;
+}
+.footer-corporate-office h1 {
+    margin-bottom: 12px;
+}
+.footer-address {
+    display: flex;
+}
+.footer-address p {
+    width: 300px;
+}
+.bottom-footer {
+    background-color: #484040;
+    color: #fff;
+    padding: 15px;
+    font-size: 18px;
+}
+.bottom-footer p {
+    margin: 0;
+}
+.bottom-footer p a {
+    text-decoration: none;
+    color: #fe0505;
+    text-decoration: solid;
+}
+.bottom-footer p a:hover {
+    color: #f7321d;
+    text-decoration: underline;
+    transition: 1s ease-in-out;
+}
+@media screen and ( max-width: 768px ) {
+    .footer-area {
+        padding: 20px 30px;
+    }
+}
