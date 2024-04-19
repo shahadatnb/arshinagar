@@ -36,6 +36,11 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->price = $request->price;
         $product->description = $request->description;
+        if($request->file('photo')){
+            $file_name = time().'.'.$request->file('photo')->extension();
+            $request->file('photo')->storeAs('public/product', $file_name);
+            $product->photo = 'product/'.$file_name;
+        }
         $product->save();
         return redirect()->route('product.index');
     }
@@ -66,6 +71,11 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->price = $request->price;
         $product->description = $request->description;
+        if($request->file('photo')){
+            $file_name = time().'.'.$request->file('photo')->extension();
+            $request->file('photo')->storeAs('public/product', $file_name);
+            $product->photo = 'product/'.$file_name;
+        }
         $product->save();
         return redirect()->route('product.index');
     }

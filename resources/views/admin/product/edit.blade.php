@@ -2,7 +2,7 @@
 @section('content')
 <h1>Product Edit</h1>
 <a class="btn btn-info" href="{{ route('product.index')}}">Back</a>
-<form action="{{route('product.update', $product)}}" class="row" method="post">
+<form action="{{route('product.update', $product)}}" class="row" method="post" enctype="multipart/form-data">
     @method('PUT')
     @csrf
     <div class="col">
@@ -31,6 +31,12 @@
                     <option value="{{$category->id}}" {{$category->id == $product->category_id ? 'selected' : ''}}>{{$category->name}}</option>
                 @endforeach
             </select>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label for="photo">Image</label>
+            <input name="photo" id="image" type="file" class="form-control">
         </div>
     </div>
     <div class="col">

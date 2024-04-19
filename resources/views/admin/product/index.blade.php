@@ -5,6 +5,7 @@
 <table class="table">
     <tr>
         <td>ID</td>
+        <td>Photo</td>
         <td>Name</td>
         <td>Price</td>
         <td>Category</td>
@@ -13,6 +14,7 @@
     @foreach ($products as $item)
         <tr>
             <td>{{$item->id}}</td>
+            <td><img width="50" src="{{asset('storage/'.$item->photo)}}" alt=""></td>
             <td>{{$item->name}}</td>
             <td>{{$item->price}}</td>
             <td>{{$item->category ? $item->category->name : ''}}</td>

@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'solaimanlipi';
+    src: url('font/SolaimanLipi_22-02-2012.ttf') format('ttf');
+         /* url('path/to/font.woff') format('woff'); */
+    /* Add additional font formats as needed */
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #f0f0ec;
+    font-family: solaimanlipi;
+}
+.menubar {
+    position: fixed;
+    /* top: 0; */
+    width: 100%;
+    background-color: #fdfdfd;
+    border-bottom: 1px solid salmon;
+}
+.menubar-top-item {
+    background-color: #fafcfa;
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo img {
+    width: 170px;
+    height: 50px;
+}
+.search-bar {
+    border: 1px solid gray;
+    border-bottom: 2px solid salmon;
+    box-sizing: border-box;
+}
+.search-bar select {
+    width: auto;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: #e3fdee;
+}
+#selects option {
+    background-color: #fff;
+    width: 500px;
+    height: 500px;
+}
+
+.search-bar input {
+    width: 500px;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #8a8787;
+}
+.search-bar button {
+    width: 70px;
+    height: 52px;
+    border: none;
+    outline: none;
+    margin-left: 0;
+    background-color: #05b169;
+}
+.menubar-right {
+    display: inline;
+}
+.menubar-right a i {
+    font-size: 28px;
+    border: none;
+    color: #423939;
+}
+.menubar-right a {
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 35px;
+}
+.singin {
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 5px 15px;
+    color: #2b2929;
+    font-weight: 400;
+}
+.singin:hover {
+    color: aliceblue;
+    background-color: #02b602;
+}
+@media screen and ( max-width: 1100px ) {
+    .menubar-top-item {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+@media screen and ( max-width: 768px ) {
+    .menubar-top-item {
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+
+.banner {
+    margin-top: 90px;
+}
