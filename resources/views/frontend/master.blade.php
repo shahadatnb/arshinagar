@@ -43,7 +43,7 @@
                 </div>
                 <div class="menubar-right">                    
                     <a href="{{route('checkout')}}"><i class="fa-solid fa-cart-shopping"></i>{{session('cart') ? count(session('cart')) : 0}}</a>
-                    <a class="singin" href="#">Sign in</a>
+                    <a class="singin" href="{{ url('login') }}">Sign in</a>
                 </div>
             </div>
         </div>

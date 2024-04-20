@@ -8,7 +8,7 @@ use App\Models\Product;
 class FrontController extends Controller
 {
     public function index(){
-        $products = Product::all();
+        $products = Product::paginate(20);
         return view('frontend.pages.index',compact('products'));
     }
 

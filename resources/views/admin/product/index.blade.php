@@ -2,6 +2,11 @@
 @section('content')
 <h1>Product Page</h1>
 <a class="btn btn-info" href="{{ route('product.create')}}">Add</a>
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>    
+@endif
 <table class="table">
     <tr>
         <td>ID</td>
@@ -29,4 +34,5 @@
         </tr>
     @endforeach
 </table>
+{{$products->links()}}
 @endsection

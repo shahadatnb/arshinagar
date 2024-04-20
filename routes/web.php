@@ -23,18 +23,25 @@ Route::get('/single-product/{id}', [FrontController::class, 'singleProduct'])->n
 Route::get('/add-to-cart/{id}', [FrontController::class, 'addToCart'])->name('cart.add');
 Route::get('/checkout', [FrontController::class, 'checkout'])->name('checkout');
 Route::post('/place-order', [OrderController::class, 'placeOrder'])->name('place.order');
-Route::get('/order-list', [OrderController::class, 'index'])->name('order.list');
-Route::get('/order-detail/{id}', [OrderController::class, 'show'])->name('order.show');
 
-Route::get('category',[CategoryController::class, 'index'])->name('category.index');
-Route::get('category/create',[CategoryController::class, 'create'])->name('category.create');
-Route::post('category/store',[CategoryController::class, 'store'])->name('category.store');
-Route::get('category/show/{category}',[CategoryController::class, 'show'])->name('category.show');
-Route::get('category/{category}/edit',[CategoryController::class, 'edit'])->name('category.edit');
-Route::put('category/update/{category}',[CategoryController::class, 'update'])->name('category.update');
-Route::delete('category/destroy/{category}',[CategoryController::class, 'destroy'])->name('category.destroy');
 
-Route::resource('product', ProductController::class);
+
+
+Route::group(['middleware' => ['auth']], function(){
+    Route::resource('product', ProductController::class);
+
+    Route::get('category',[CategoryController::class, 'index'])->name('category.index');
+    Route::get('category/create',[CategoryController::class, 'create'])->name('category.create');
+    Route::post('category/store',[CategoryController::class, 'store'])->name('category.store');
+    Route::get('category/show/{category}',[CategoryController::class, 'show'])->name('category.show');
+    Route::get('category/{category}/edit',[CategoryController::class, 'edit'])->name('category.edit');
+    Route::put('category/update/{category}',[CategoryController::class, 'update'])->name('category.update');
+    Route::delete('category/destroy/{category}',[CategoryController::class, 'destroy'])->name('category.destroy');
+
+    Route::get('/order-list', [OrderController::class, 'index'])->name('order.list');
+    Route::get('/order-detail/{id}', [OrderController::class, 'show'])->name('order.show');
+});
+
 /*
 Route::get('product',[ProductController::class, 'index'])->name('product.index');
 Route::get('product/create',[ProductController::class, 'create'])->name('product.create');

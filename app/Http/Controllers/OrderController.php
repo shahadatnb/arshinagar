@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\OrderReceived;
 
 class OrderController extends Controller
 {
@@ -38,6 +40,8 @@ class OrderController extends Controller
         }
 
         session()->forget('cart');
+
+        Notification::sendNow($order, new OrderReceived($order));
 
         return redirect()->route('home');
     }

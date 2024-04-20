@@ -13,7 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(20);
         return view('admin.product.index', compact('products'));
     }
 
@@ -42,6 +42,7 @@ class ProductController extends Controller
             $product->photo = 'product/'.$file_name;
         }
         $product->save();
+        session()->flash('success','Successfully Save');
         return redirect()->route('product.index');
     }
 

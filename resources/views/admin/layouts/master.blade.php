@@ -22,6 +22,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('order.list')}}">Orders</a>
                     </li>
+                    <li class="nav-item">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <a href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </a>
+                        </form>
+                    </li>
                 </ul>
             </div>
             <div class="col-9">
