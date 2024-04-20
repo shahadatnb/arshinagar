@@ -48,9 +48,12 @@
                                 @foreach ($products as $product)
                                 <div class="col-md-2">
                                     <div class="product-item">
+                                        <a href="{{route('single.product',$product->id)}}">
                                         <img src="{{asset('storage/'.$product->photo)}}" alt="">
                                         <p class="book-name">{{$product->name}}</p>
+                                        </a>
                                         <p class="text-info">Price: {{$product->price}}</p>
+                                        <a href="{{ route('cart.add', $product->id) }}" class="btn btn-primary btn-block">Add To Cart</a>
                                     </div>
                                 </div>                                    
                                 @endforeach
